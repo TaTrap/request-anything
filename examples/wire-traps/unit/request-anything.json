@@ -1,0 +1,10 @@
+{
+  "schema": "request-anything/bridge@1",
+  "root": "..",
+  "unit": "checkout_wire_traps",
+  "fixture_file": "fixtures/checkout_wire_traps.fixture.json",
+  "contract_file": "contract.yaml",
+  "package_name": "wiretraps",
+  "endpoint_name": "checkout_wire_traps",
+  "signer_mode": "oracle_verify"
+}

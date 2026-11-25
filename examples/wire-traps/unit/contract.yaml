@@ -1,0 +1,18 @@
+schema: request-anything/contract@1
+unit: checkout_wire_traps
+strict_transport: false
+ignore_key_order: false
+cookie_wire_mode: single_header
+escape_solidus: true
+rules:
+    - target: header.content-md5
+      mode: signed
+      signer_mode: oracle_verify
+      oracle_hook: builtin:body-md5
+positive_assertions:
+    - name: zero_native_exceptions
+      type: zero_native_exceptions
+      reason: NativeOracle.Health must report 0 worker exceptions
+    - name: req_id_correlation
+      type: req_id_correlation
+      reason: Every response must correlate to its exact reqID (forbids FIFO delivery)

@@ -1,0 +1,28 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.tatrap/request-anything",
+  "title": "request-anything",
+  "description": "Port HTTP/HTTPS/HTTP2/Protobuf API requests and stateful mobile/web flows to Go with Wire-Level Ground Truth, NativeOracle session correlation, and Hard Gate verification.",
+  "repository": {
+    "url": "https://github.com/TaTrap/request-anything",
+    "source": "github"
+  },
+  "websiteUrl": "https://github.com/TaTrap/request-anything",
+  "version": "0.1.0",
+  "packages": [
+    {
+      "registryType": "oci",
+      "identifier": "github.com/TaTrap/request-anything",
+      "version": "0.1.0",
+      "transport": {
+        "type": "stdio"
+      },
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "mcp"
+        }
+      ]
+    }
+  ]
+}

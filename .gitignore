@@ -1,0 +1,39 @@
+# Binaries & build artifacts
+/bin/
+/dist/
+coverage.out
+*.exe
+*.dll
+*.so
+*.dylib
+*.out
+*.test
+tmp_*
+
+# Local raw captures, databases & secrets (NEVER commit unredacted captures or keys)
+.request-anything/
+local-captures/
+*.sqlite
+*.sqlite3
+*.db
+*.mitm
+*.pcap
+*.pcapng
+*.secblob
+*.pem
+*.key
+*.p12
+*.pfx
+*private_key*
+.env
+.env.*
+secrets.*
+*secrets.json
+*secrets.yaml
+*.bak
+
+# Local internal planning notes
+/PLAN.md
+
+# Read-only local reference repo (not part of this Go repository)
+rust-anything/

@@ -1,0 +1,51 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  verify:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+
+      - name: Check formatting (gofmt)
+        shell: bash
+        run: |
+          unfmt="$(gofmt -l cmd examples internal pkg skills tests)"
+          if [[ -n "$unfmt" ]]; then
+            echo "Unformatted files:"
+            echo "$unfmt"
+            exit 1
+          fi
+
+      - name: Run go vet
+        shell: bash
+        run: go vet ./cmd/... ./examples/... ./internal/... ./pkg/... ./skills/... ./tests/...
+
+      - name: Run unit and E2E tests
+        shell: bash
+        run: go test -v -count=1 ./cmd/... ./examples/... ./internal/... ./pkg/... ./skills/... ./tests/...
+
+      - name: Build, doctor self-test, and wire-traps showcase
+        shell: bash
+        run: |
+          EXT=""
+          if [[ "${{ runner.os }}" == "Windows" ]]; then
+            EXT=".exe"
+          fi
+          go build -o "bin/request-anything${EXT}" ./cmd/request-anything
+          "./bin/request-anything${EXT}" --version
+          "./bin/request-anything${EXT}" doctor --json
+          "./bin/request-anything${EXT}" gate ./examples/wire-traps/unit
+          "./bin/request-anything${EXT}" map . --check

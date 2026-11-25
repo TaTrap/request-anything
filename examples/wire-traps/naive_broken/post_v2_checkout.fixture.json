@@ -1,0 +1,74 @@
+{
+  "schema": "request-anything/fixture@1",
+  "id": "post_v2_checkout",
+  "name": "post_v2_checkout",
+  "source": "raw_http",
+  "request": {
+    "schema": "request-anything/fixture@1",
+    "method": "POST",
+    "scheme": "https",
+    "authority": "api.example.com",
+    "raw_path": "/v2/checkout",
+    "raw_query": "iid=\u0026resolution=1080%2A2400\u0026tag=a\u0026tag=b",
+    "query": [
+      {
+        "raw_key": "iid",
+        "raw_value": "",
+        "has_eq": true
+      },
+      {
+        "raw_key": "resolution",
+        "raw_value": "1080%2A2400",
+        "has_eq": true
+      },
+      {
+        "raw_key": "tag",
+        "raw_value": "a",
+        "has_eq": true
+      },
+      {
+        "raw_key": "tag",
+        "raw_value": "b",
+        "has_eq": true
+      }
+    ],
+    "headers": [
+      {
+        "raw_name": "Host",
+        "value": "api.example.com"
+      },
+      {
+        "raw_name": "X-Client-Ver",
+        "value": "4.2.0"
+      },
+      {
+        "raw_name": "Content-Md5",
+        "value": "978374847C396EDF00960086D2C20D42"
+      },
+      {
+        "raw_name": "Content-Type",
+        "value": "application/json"
+      },
+      {
+        "raw_name": "Content-Length",
+        "value": "63"
+      }
+    ],
+    "body": {
+      "encoding": "raw",
+      "kind": "json",
+      "json_style": {
+        "escape_solidus": false,
+        "preserve_raw_numbers": true
+      },
+      "raw_sha256": "e7c6c7a6b95c5c358628c590b6e1145c1ccf209ba3e07591a1a823ff6244483d",
+      "bin_file": "post_v2_checkout.body.bin",
+      "decoded_sha256": "e7c6c7a6b95c5c358628c590b6e1145c1ccf209ba3e07591a1a823ff6244483d"
+    },
+    "transport": {
+      "capture_fidelity": "lossless_wire",
+      "cookie_wire_mode": "single_header",
+      "proto": "HTTP/1.1"
+    }
+  }
+}

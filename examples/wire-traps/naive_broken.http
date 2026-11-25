@@ -1,0 +1,8 @@
+POST /v2/checkout?iid=&resolution=1080%2A2400&tag=a&tag=b HTTP/1.1
+Host: api.example.com
+X-Client-Ver: 4.2.0
+Content-Md5: 978374847C396EDF00960086D2C20D42
+Content-Type: application/json
+Content-Length: 63
+
+{"callback":"https://pay.example.com/ok","amount":19,"retry":0}

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="420" viewBox="0 0 960 420">
+<rect width="960" height="420" fill="#ffffff"/>
+<g font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif">
+<text x="48" y="64" font-size="28" font-weight="700" fill="#1a1a1a">request-anything · checkout_wire_traps</text>
+<rect x="48" y="96" width="410" height="170" rx="16" fill="#ffffff" stroke="#e5e5e5" stroke-width="2"/>
+<text x="72" y="136" font-size="22" font-weight="700" fill="#1a1a1a">Original</text>
+<text x="72" y="210" font-family="monospace" font-size="44" font-weight="700" fill="#1a1a1a">38.4 ms</text>
+<rect x="502" y="96" width="410" height="170" rx="16" fill="#eef9ff" stroke="#7dd3fc" stroke-width="2"/>
+<text x="526" y="136" font-size="22" font-weight="700" fill="#0369a1">Go port</text>
+<text x="526" y="210" font-family="monospace" font-size="44" font-weight="700" fill="#0284c7">17.6 ms</text>
+<text x="480" y="324" font-size="22" text-anchor="middle" fill="#1a1a1a">1/1 wire cases matched · 2.2x faster · 2 unknown gap(s)</text>
+<text x="480" y="366" font-size="15" text-anchor="middle" fill="#666666">Fallback: 0.0% · windows/amd64, 20 cores</text>
+</g>
+</svg>
